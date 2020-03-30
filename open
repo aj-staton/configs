@@ -1,0 +1,47 @@
+#!/bin/bash
+#################################################
+# This bash script will open a *.pptx, *.docx, or
+# *.pdf file, as a pdf.
+# I found it annoying to recall all of the diff-
+# erent liuux tools for each one.
+
+# Uses the "qpdfview" pdf program to open files.
+#    https://launchpad.net/qpdfview
+
+# TODO: Add a feature for an option to delete the
+# file that was converted.
+
+# Written by Austin Staton
+# Mar 30, 2020
+#################################################
+
+# Ensure only one arg is given.
+if [ $# != 1 ]; then
+  echo "$0 Usage: too many arguments."
+#elif [ $# == 0 ]; then
+#  echo "$0 Usage: needs arguments."
+fi
+FILE=$1
+
+# For docs and powerpoints, the files need to first be
+# converted. Grab last four chars in file to check
+# the extension.
+if [[ $FILE == *.pptx ]] || 
+   [[ $FILE == *.ppt ]] ||
+   [[ $FILE == *.docx ]] ||
+   [[ $FILE == *.doc ]]; then
+  echo "Converting $FILE to PDF..."
+  unoconv -f pdf $FILE
+  # Get the file name, no extension.
+  NAME=$(echo "$FILE" | cut -f 1 -d '.')
+  OUTPUT="${NAME}.pdf" 
+  echo "File converted to $OUTPUT"
+  echo "Opening $OUTPUT..."
+  qpdfview $OUTPUT &
+elif [[ $FILE == *.pdf ]]; then
+  echo "Opening $FILE"
+  qpdfview $FILE &
+else
+  EXT=$(echo "$FILE" | cut -f 2 -d '.')
+  echo "*.$EXT files are not supported by this command."
+fi 
