@@ -1,5 +1,7 @@
 #!/usr/bin/python
-# This script will automate the building of a github repo.
+# This script will automate the building of a github repo online
+# and cloning into a desired directory.
+#
 # Written by: Austin Staton 
 # Date; March 31, 2020
 
