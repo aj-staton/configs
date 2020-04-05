@@ -39,8 +39,11 @@ if [[ $FILE == *.pptx ]] ||
   echo "Opening $OUTPUT..."
   qpdfview $OUTPUT &
 elif [[ $FILE == *.pdf ]]; then
-  echo "Opening $FILE"
+  echo "Opening $FILE..."
   qpdfview $FILE &
+elif [[ $FILE == *.txt ]]; then
+  echo "Opening $FILE..."
+  gvim $FILE &
 else
   EXT=$(echo "$FILE" | cut -f 2 -d '.')
   echo "*.$EXT files are not supported by this command."
