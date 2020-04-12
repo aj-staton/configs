@@ -44,6 +44,14 @@ elif [[ $FILE == *.pdf ]]; then
 elif [[ $FILE == *.txt ]]; then
   echo "Opening $FILE..."
   gvim $FILE &
+elif [[ $FILE == *.tex ]]; then 
+  echo "Converting $FILE to a PDF..."
+  pdflatex $FILE
+  NAME=$(echo "$FILE" | cut -f 1 -d '.')
+  OUTPUT="${NAME}.pdf" 
+  echo "File converted to $OUTPUT"
+  echo "Opening $OUTPUT..."
+  qpdfview $OUTPUT &
 else
   EXT=$(echo "$FILE" | cut -f 2 -d '.')
   echo "*.$EXT files are not supported by this command."
