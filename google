@@ -1,0 +1,5 @@
+#
+#'google' takes in one string argument and sends it to the 
+#default browser at google.com.
+#    usage: google <string>
+
