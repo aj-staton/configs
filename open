@@ -5,8 +5,11 @@
 # I found it annoying to recall all of the diff-
 # erent liuux tools for each one.
 
-# Uses the "qpdfview" pdf program to open files.
-#    https://launchpad.net/qpdfview
+# DEPENDANCIES:
+#   vim-gtk3
+#   unoconv
+#   texlive
+#   qpdfview
 
 # TODO: Add a feature for an option to delete the
 # file that was converted.
