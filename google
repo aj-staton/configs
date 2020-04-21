@@ -23,6 +23,7 @@ def main(argv):
   search = browser.find_elements_by_xpath('/html/body/div/div[3]/form/div[2]/div[1]/div[1]/div/div[2]/input')[0]
   search.send_keys(string)
   search.send_keys(Keys.RETURN)
-
+  os.system('rm geckodriver.log')
+  
 if __name__ == '__main__':
   main(sys.argv)
