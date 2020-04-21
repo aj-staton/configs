@@ -1,5 +1,28 @@
-#
-#'google' takes in one string argument and sends it to the 
-#default browser at google.com.
-#    usage: google <string>
+#!/usr/bin/python
+# `google` takes in one string argument and 
+# searches that argument in google. 
+# 
+# Written by: Austin Staton
+# Date: April 20, 2020
 
+import sys, os
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+
+def main(argv):
+
+  if (len(argv) != 2):
+    print("usage: google <what you want to google>")
+    sys.exit()
+
+  string = str(argv[1])
+  print("Googling '"+string+"'")
+  # Open firefox, go to google.
+  browser = webdriver.Firefox()
+  browser.get('https://google.com')
+  search = browser.find_elements_by_xpath('/html/body/div/div[3]/form/div[2]/div[1]/div[1]/div/div[2]/input')[0]
+  search.send_keys(string)
+  search.send_keys(Keys.RETURN)
+
+if __name__ == '__main__':
+  main(sys.argv)
