@@ -1,0 +1,10 @@
+##   Archway Conky   ##
+Place this entire folder into your .conky folder.  i.e. ~/.conky/Archway
+(If moved to another location and using the Archway-mpd edit the path in cover.sh)
+
+Archway-mpd requires mpc and a last.fm API key that you put in the cover.sh file
+
+Archway-clock should simply work
+
+Archway-system requires 'PizzaDude Bullets' font be installed.  These are for the up/down wifi
+arrows (other fonts can be substituted with some modifictaion to the script)

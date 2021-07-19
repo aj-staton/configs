@@ -1,0 +1,40 @@
+use_xft yes
+xftfont Cantarell:pixelsize=16
+#xftalpha 0.1
+update_interval 2
+total_run_times 0
+own_window yes
+own_window_type desktop
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_colour 000000
+own_window_argb_visual yes
+own_window_argb_value 0
+short_units yes
+format_human_readable yes
+double_buffer yes
+draw_shades yes
+draw_outline yes
+draw_borders no
+draw_graph_borders no
+default_color E3E3E3
+default_shade_color 2B2B2B
+default_outline_color 2B2B2B
+alignment top_middle
+gap_x 0
+gap_y 30
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+net_avg_samples 2
+override_utf8_locale yes
+use_spacer none
+color0 1793D1
+color1 E3E3E3
+color2 566070
+color3 796787
+
+
+minimum_size 1000 30
+TEXT
+${color0}WIFI  ${color1}${voffset -1}${font PizzaDude Bullets:size=11}O${font}${voffset -3.2} ${upspeed wlp2s2}${font}  ${voffset -.7} ${font PizzaDude Bullets:size=11}U${font}${voffset -4.5} ${downspeed wlp2s2}${offset 25}${color0}HD${offset 9}${color1}${fs_free}${color0}  / ${color1}${fs_size}${offset 25}${color0}SWAP${offset 9}${color1}$swap${color0}  / ${color1}$swapmax${offset 25}${color0}RAM${offset 9}${color1}$mem ${color0} / ${color1}$memmax${offset 25}${color0}CPU${offset 9}${color1}${cpu cpu0}%${color0}${offset 25}KERNEL${offset 9}${color1}$kernel${offset 25}${color0}UPTIME${offset 9}${color1}$uptime_short
