@@ -7,11 +7,18 @@ endif
 call plug#begin('~/.config/nvim/autoload/plugged')
 
     " Syntax support
-    Plug 'sheefun/vim-polyglot'
+    Plug 'sheerun/vim-polyglot'
 
     " File Tree
     Plug 'scrooloose/NERDTree'
 
+    " Terminal
+    Plug 'voldikss/vim-floaterm'
+
     " Auto-pairs for (, {, and [
-    Plug 'jianmiao/auto-pairs'
+    Plug 'jiangmiao/auto-pairs'
+
+    " Color Scheme
+    Plug 'rafi/awesome-vim-colorschemes'
+
 call plug#end()
